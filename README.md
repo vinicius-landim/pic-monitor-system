@@ -1,4 +1,4 @@
-# PIC Monitor System
+# PIC Monitoring System
 
 Embedded monitoring system developed for the Embedded Systems course in the Computer Engineering program at UNIFESP.
 
@@ -83,17 +83,8 @@ The Arduino Mega 2560 pin assignments used in the project are:
 
 The Arduino also communicates with the PIC over UART and uses the DS1307 RTC through I2C for timestamped event logging.
 
-## Features
 
-- password authentication to access the system;
-- system activation and deactivation;
-- continuous reading of the three sensors;
-- real-time value display on the PIC LCD;
-- configuration of minimum and maximum operating thresholds;
-- alert generation when measured values exceed the configured thresholds;
-- event logging with date and time on the Arduino.
-
-## Communication Between Modules
+## UART Communication
 
 Data exchange between the PIC and the Arduino is done through UART.
 
@@ -111,16 +102,6 @@ Data exchange between the PIC and the Arduino is done through UART.
 ### Arduino response
 
 The Arduino responds with the requested value as plain text, terminated by a newline character, so the PIC can display the measurement on the LCD or store the received threshold.
-
-## User Flow
-
-The operating flow is:
-
-1. The user accesses the PIC panel.
-2. The system requests the unlock password.
-3. After authentication, the user can choose between monitoring sensors or adjusting thresholds.
-4. The PIC sends UART commands to the Arduino.
-5. The Arduino returns measurements and triggers local alerts when necessary.
 
 ## Repository Structure
 
